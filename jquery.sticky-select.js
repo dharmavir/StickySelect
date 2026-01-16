@@ -1,7 +1,6 @@
 /*!
- * jQuery DG Magnet Combo 1.2
- * http://www.digitss.com/
- * http://blogs.digitss.com/projects/jquery-plugins/
+ * jQuery DG Magnet Combo 1.3
+ * http://www.ablemindworks.com/
  *
  * Uses and works with jQuery.js
  * http://jquery.com/
@@ -9,26 +8,26 @@
  * Released under the MIT, BSD, and GPL Licenses.
  *
  * Initial Release Date: Mon Jan 26 2011
- * Last Updated Date: Sat Feb 12 2011
+ * Last Updated Date: Tue Jan 13 2026
  */
 // TODO: Make it work with Shift key naturally
 jQuery.fn.extend({
-dgMagnetCombo: function()
+stickySelect: function()
 {
 	$.each($(this), function(){
-		$(this).buildMagnetCombo();
+		$(this).makeSelectSticky();
 	});
 }
 ,
-buildMagnetCombo: function()
+makeSelectSticky: function()
 {
 	var bControlPress; // Maintain Control state	
 	var dataKey = "data_" + $(this).attr("id");
-	$(this).data("dgVal", $(this).val() || []); // Set selected values on load if any (reported by fflavio)
+	$(this).data("amwVal", $(this).val() || []); // Set selected values on load if any (reported by fflavio)
 	$(this).click( function()
 	{
 		var sTop	=	this.scrollTop;
-		var oVal	=	$(this).data("dgVal") || [];
+		var oVal	=	$(this).data("amwVal") || [];
 		var nVal	=	$(this).val();
 
 		if(bControlPress != true)
@@ -45,7 +44,7 @@ buildMagnetCombo: function()
 					oVal.push(nVal[0]);
 				}
 			}
-			$(this).data("dgVal",oVal).val(oVal);
+			$(this).data("amwVal",oVal).val(oVal);
 		}
 		else
 		{	// This makes it work with CTL key
@@ -57,7 +56,7 @@ buildMagnetCombo: function()
 						oVal.splice(index, 1);
 					}
 				});
-				$(this).data("dgVal",oVal);
+				$(this).data("amwVal",oVal);
 			}
 		}
 		this.scrollTop = sTop;
@@ -95,7 +94,7 @@ buildMagnetCombo: function()
 		}
 		else
 		{		
-			if(!(e.which >= 37 && e.which <= 40))	// To make Up and Down arrow work
+			if(!(e.which >= 37 && e.which <= 40))	// TODO: Make Up and Down arrow work
 			{
 				//$(this).click();
 			}

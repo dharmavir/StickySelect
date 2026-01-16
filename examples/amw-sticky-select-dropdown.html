@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>jQuery plugin - StickySelect</title>
+  <meta NAME="Generator" CONTENT="blogs@digitss.com">
+  <meta NAME="Author" CONTENT="Dharmavirsinh Jhala">
+  <meta NAME="Keywords" CONTENT="jquery, dg-magnet-combo, plugin, forms, select, combobox, smart combo, no-control-click, magic combo">
+  <meta NAME="Description" CONTENT="Sticky Select/Dropdown - a checkobx like behavior from an HTML SELECT">
+  <style>
+  body{
+  font-family:verdana;
+  font-size:11px;
+  }
+  a{
+  color:#ff8213;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../jquery.sticky-select.js"></script>
+ </head>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("select").stickySelect();
+	$("select option").mousedown(function(){
+	});
+})
+</script>
+<br />
+<h1>Example Usage of dg-magnet-combo:</h1>
+<div><u>No Control+Click dropdown or list, just with your simple HTML and little jQuery magic (or glue)</u></div>
+<h2>
+<i>StickySelect</i> is smart dropdown that won't require a user to hold <b>CTL</b> key pressed while they select another option of the select-control. If you're wondering how just try this sample.
+</h2>
+<br />
+
+<h4> Choose at least one stock to run your free analaysis:</h4>
+<select name="my_list" id="my_list" multiple="multiple">
+  <option value="AMZN">Amazon.com Inc</option>
+  <option value="AAPL" >Apple Inc</option>
+  <option value="GOOG">Alphabet Inc</option>
+  <option value="Meta">Meta Platforms Inc</option>
+  <option value="NVDA">Nvidia Corp</option>
+</select>
+<h4> Get a free fractional share from the choice of your company, select one:</h4>
+<select name="my_list2" id="my_list2" multiple="multiple">
+  <option value="AMD">Advanced Micro Devices Inc</option>
+  <option value="AMZN">Amazon.com Inc</option>
+  <option value="MSFT">Microsoft Corp</option>
+  <option value="NFLX" >Netflix Inc</option>
+  <option value="TSLA">Tesla Inc</option>
+</select>
+<div>
+<textarea id="d" rows="20" cols="100">
+</textarea>
+<div>
+</body>
+</html>
